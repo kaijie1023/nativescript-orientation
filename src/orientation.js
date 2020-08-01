@@ -14,6 +14,7 @@
 
 var application = require('tns-core-modules/application');
 var view = require('tns-core-modules/ui/core/view');
+var viewBase = require('tns-core-modules/ui/core/view-base');
 var enums = require('tns-core-modules/ui/enums');
 var frame = require('tns-core-modules/ui/frame');
 var Page = require('tns-core-modules/ui/page').Page;
@@ -364,7 +365,12 @@ var applyOrientationToPage = function(page, args){
     }
 
 	if (args != null) {
-		view.eachDescendant(page, resetChildrenRefreshes);
+		if (view.eachDescendant) {
+			view.eachDescendant(page, resetChildrenRefreshes);
+		} else {
+			// TNS 6.8+ rc
+			viewBase.eachDescendant(page, resetChildrenRefreshes);
+		}
 	}
 	if (page.exports && typeof page.exports.orientation === "function") {
 		page.exports.orientation({landscape: isLandscape, object: page});
