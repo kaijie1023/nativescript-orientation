@@ -1,4 +1,4 @@
-import { Page } from "tns-core-modules/ui/page/page";
+import { Page } from "@nativescript/core/ui/page/page";
 
 export interface OrientationApplierOptions {
     object?: Page,
