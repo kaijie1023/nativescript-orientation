@@ -73,10 +73,7 @@
 						"url": "https://github.com/blinard"
 				}
 		],
-		"license": {
-				"type": "MIT",
-				"url": "https://proplugins.org/proplugins/nativescript-orientation/blob/master/LICENSE"
-		},
+		"license": "Unsupported",
 		"bugs": {
 				"url": "https://proplugins.org/proplugins/nativescript-orientation/issues"
 		},
